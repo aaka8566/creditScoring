@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data files (if you have large datasets)
+data/large_datasets/
+*.csv
+*.xlsx
+
+# Documentation (already in README)
+*.md
+!README.md
+!README_HF.md
+
+# Git
+.git/
+.gitignore
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+tmp/
+temp/
+
