@@ -4,7 +4,6 @@ from enhanced_scoring import enhanced_hybrid_risk_score
 import uvicorn
 from typing import Optional
 import logging
-import ollama
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -19,21 +18,22 @@ except ImportError:
     BANK_STATEMENT_AVAILABLE = False
     logger.warning("Bank statement processing not available - install dependencies")
 
-app = FastAPI(
-    title="Enhanced NBFC AI Scoring API",
-    description="Advanced AI-powered credit scoring for Non-Banking Financial Companies",
-    version="2.0.0"
-)
-
-# Optional AI summarizer using Ollama (better than HuggingFace)
+# Optional AI summarizer using Ollama (optional import)
 try:
-    # Test if Ollama is available
+    import ollama
+    # Test if Ollama is available and running
     ollama.list()
     OLLAMA_AVAILABLE = True
     logger.info("Ollama AI summarizer enabled")
 except Exception as e:
     OLLAMA_AVAILABLE = False
     logger.warning(f"Ollama not available: {e}")
+
+app = FastAPI(
+    title="Enhanced NBFC AI Scoring API",
+    description="Advanced AI-powered credit scoring for Non-Banking Financial Companies",
+    version="2.0.0"
+)
 
 class LoanApplication(BaseModel):
     age: int
