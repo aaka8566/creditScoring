@@ -1,0 +1,23 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+requests
+pydantic==2.5.0
+ollama
+python-multipart
+
+# Optional: Bank Statement Processing Dependencies
+PyPDF2
+easyocr
+Pillow
+opencv-python-headless
+
+# Optional: Heavy ML packages (can skip for testing)
+# transformers
+# torch
+# shap
+
